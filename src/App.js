@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Book from "./components/Book";
+
+const Library = [
+  {
+    id: 1,
+    title: "one",
+    authorName: "Harry",
+    bookname: "harry potter",
+  },
+  {
+    id: 2,
+    title: "two",
+    authorName: "Harry",
+    bookname: "absbdbasbd",
+  },
+  {
+    id: 3,
+    title: "three",
+    authorName: "Harry three",
+    bookname: "harry asdadad",
+  },
+  {
+    id: 4,
+    title: "four",
+    authorName: "Harry four",
+    bookname: "harry hahshha",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {Library.map((item) => {
+        console.log(item);
+        const { title, authorName, bookname } = item;
+        return (
+          <Book
+            key={item.id}
+            title={title}
+            authorName={authorName}
+            bookname={bookname}
+          />
+        );
+      })}
+    </>
   );
 }
 
