@@ -1,5 +1,5 @@
 import "./App.css";
-import ObjectuseState from "./components/objectuseState";
+import ConditionalRedndering from "./components/conditionalRedndering";
 function App() {
   return (
     <div
@@ -12,7 +12,7 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <ObjectuseState />
+      <ConditionalRedndering />
     </div>
   );
 }

@@ -561,3 +561,11 @@ Navbar
 /* set hero to 
 min-height:calc(100vh - 62px);
 */
+
+.red{
+  color: red;
+}
+
+.yellow {
+  color: yellow;
+}
