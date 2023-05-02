@@ -28,7 +28,7 @@ const Inputs = () => {
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         Name :
         <input
@@ -85,7 +85,10 @@ const Inputs = () => {
         />
       </div>
       <button type="submit" onSubmit={handleSubmit}>
-        Submit form
+        Submit form 1
+      </button>
+      <button type="button" onClick={handleSubmit}>
+        Submit form 2
       </button>
     </form>
   );
