@@ -1,5 +1,5 @@
 import "./App.css";
-import ConditionalRedndering from "./components/conditionalRedndering";
+import Inputs from "./components/Inputs";
 function App() {
   return (
     <div
@@ -12,7 +12,7 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <ConditionalRedndering />
+      <Inputs />
     </div>
   );
 }
