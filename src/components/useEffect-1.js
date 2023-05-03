@@ -6,7 +6,7 @@ const UseEffect = () => {
   useEffect(() => {
     console.log("I am inside useffect");
     if (toggle) {
-      setCount(count + 1);
+      setCount((count) => count + 1);
     }
   }, [toggle]);
   // useEffect(() => {
