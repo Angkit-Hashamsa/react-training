@@ -1,5 +1,5 @@
 import "./App.css";
-import Inputs from "./components/Inputs";
+import CleanUp from "./components/cleanUp";
 function App() {
   return (
     <div
@@ -12,7 +12,7 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <Inputs />
+      <CleanUp />
     </div>
   );
 }
