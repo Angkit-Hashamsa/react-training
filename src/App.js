@@ -1,5 +1,5 @@
 import "./App.css";
-import CleanUp from "./components/cleanUp";
+import ExampleRed from "./components/ExampleREf";
 function App() {
   return (
     <div
@@ -12,7 +12,7 @@ function App() {
         justifyContent: "center",
       }}
     >
-      <CleanUp />
+      <ExampleRed />
     </div>
   );
 }
