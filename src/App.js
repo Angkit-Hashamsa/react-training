@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 import TodoInput from "./components/todoInput";
 import TodoList from "./components/todoList";
-import Alert from "./components/alert";
+
 import "./index.css";
 
 function App() {
