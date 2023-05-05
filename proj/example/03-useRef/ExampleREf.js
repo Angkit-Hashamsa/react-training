@@ -20,7 +20,7 @@ const ExampleRed = () => {
   return (
     <div>
       Ussss
-      <button onClick={changeCOlor}>Change colour</button>
+      <button  onClick={changeCOlor}>Change colour</button>
       <div
         ref={box}
         style={{ background: "red", width: "20rem", height: "20rem" }}
