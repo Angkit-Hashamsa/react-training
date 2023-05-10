@@ -1,16 +1,11 @@
 import React from "react";
 import Alert from "./alert";
-const TodoInput = ({
-  todo,
-  setTodo,
-  handleSubmit,
-  isEdit,
-  alert,
-  handleAlert,
-}) => {
+import { useTodo } from "../context/todoContext";
+const TodoInput = () => {
+  const { todo, setTodo, handleSubmit, isEdit, alert } = useTodo();
   return (
     <div className="w-[90%] mx-auto mt-10">
-      {alert.status && <Alert alert={alert} handleAlert={handleAlert} />}
+      {alert.status && <Alert />}
       <form
         onSubmit={handleSubmit}
         className="bg-white w-full  shadow-md flex items-center gap-2 justify-center rounded px-8 pt-6 pb-8 mb-4"

@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
-const Alert = ({ alert, handleAlert }) => {
+import { useTodo } from "../context/todoContext";
+const Alert = () => {
+  const { alert, handleAlert } = useTodo();
   const color = alert.type === "success" ? "green" : "red";
 
   useEffect(() => {

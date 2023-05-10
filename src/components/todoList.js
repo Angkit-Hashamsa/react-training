@@ -1,7 +1,9 @@
 import React from "react";
+import { useTodo } from "../context/todoContext";
 import { FaTrash } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
-const TodoList = ({ todos, handleDelete, handleEdit }) => {
+const TodoList = () => {
+  const { todos, handleDelete, handleEdit } = useTodo();
   return (
     <div className="w-[90%] mx-auto">
       <h2 className="text-center text-gray-700 text-xl font-bold">Todo List</h2>
