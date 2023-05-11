@@ -23,9 +23,8 @@ const reducer = (state, action) => {
         name: action.payload.name,
       };
     default:
-      break;
+      return state;
   }
-  return state;
 };
 
 function App() {
