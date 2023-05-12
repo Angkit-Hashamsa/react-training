@@ -9,13 +9,19 @@ export const reducer = (state, action) => {
         name: action.payload.name,
       };
     case constant.DECREMENT:
+      if (state.count <= 0) {
+        return {
+          ...state,
+          count: 0,
+          name: action.payload.name,
+        };
+      }
       return {
         ...state,
         count: state.count - action.payload.number,
         name: action.payload.name,
       };
     default:
-      break;
+      return state;
   }
-  return state;
 };
