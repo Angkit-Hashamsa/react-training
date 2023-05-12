@@ -2,31 +2,12 @@
 // import TodoList from "./components/todoList";
 import { useReducer } from "react";
 import "./index.css";
+import { decrement, increment } from "./store/action";
+import { reducer } from "./store/reducer";
 
 const initialState = {
   count: 0,
   name: "",
-};
-
-const reducer = (state, action) => {
-  // console.log({ action });
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        ...state,
-        count: state.count + action.payload.number,
-        name: action.payload.name,
-      };
-    case "DECREMENT":
-      return {
-        ...state,
-        count: state.count - action.payload.number,
-        name: action.payload.name,
-      };
-    default:
-      break;
-  }
-  return state;
 };
 
 function App() {
@@ -38,26 +19,8 @@ function App() {
       <p>{myState.count}</p>
       {myState.name && <p>{myState.name}</p>}
       <div className="flex gap-3">
-        <button
-          onClick={() =>
-            dispatch({
-              type: "INCREMENT",
-              payload: { name: "Increase", number: 3 },
-            })
-          }
-        >
-          Increase
-        </button>
-        <button
-          onClick={() =>
-            dispatch({
-              type: "DECREMENT",
-              payload: { name: "Decrease", number: 2 },
-            })
-          }
-        >
-          Decrease
-        </button>
+        <button onClick={() => dispatch(increment())}>Increase</button>
+        <button onClick={() => dispatch(decrement())}>Decrease</button>
       </div>
     </div>
   );
