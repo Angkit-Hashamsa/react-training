@@ -1,28 +1,25 @@
 // import TodoInput from "./components/todoInput";
 // import TodoList from "./components/todoList";
-import { useReducer } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Services from "./components/Services";
+import Pricing from "./components/Pricing";
+import Contact from "./components/Contact";
+import Layout from "./components/Layout";
 import "./index.css";
-import { decrement, increment } from "./store/action";
-import { reducer } from "./store/reducer";
-
-const initialState = {
-  count: 0,
-  name: "",
-};
 
 function App() {
-  const [myState, dispatch] = useReducer(reducer, initialState);
-
   return (
-    <div className="mx-auto w-[50vw] h-[100vh]">
-      Use Reducer
-      <p>{myState.count}</p>
-      {myState.name && <p>{myState.name}</p>}
-      <div className="flex gap-3">
-        <button onClick={() => dispatch(increment())}>Increase</button>
-        <button onClick={() => dispatch(decrement())}>Decrease</button>
-      </div>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/contact" element={<Contact />} />
+      </Route>
+    </Routes>
   );
 }
 
