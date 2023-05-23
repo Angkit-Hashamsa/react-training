@@ -7,6 +7,8 @@ import Services from "./components/Services";
 import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
+import Product from "./components/Product";
+import SingleProduct from "./components/SingleProduct";
 import "./index.css";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/Product" element={<Product />} />
+        <Route path="/Product/:id" element={<SingleProduct />} />
       </Route>
     </Routes>
   );
