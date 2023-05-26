@@ -33,6 +33,7 @@ const About = () => {
             <div className="bg-violet-500 flex px-4 py-3 gap-3 w-[75%] mx-auto">
                 {navLinkData.map((item) => (
                     <NavLink
+                        key={item.id}
                         to={item.link}
                         style={({ isActive, isPending }) => {
                             return {
@@ -42,6 +43,7 @@ const About = () => {
                         className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                         aria-current="page"
                         end
+                        state={{ showText: true }}
                     >
                         {item.name}
                     </NavLink>

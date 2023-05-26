@@ -14,11 +14,13 @@ import Dashboard from "./pages/About/Dashboard";
 import Market from "./pages/About/Market";
 import Result from "./pages/About/Result";
 import Error from "./pages/Error";
+import Login from "./pages/Login";
 import "./index.css";
 
 function App() {
     return (
         <Routes>
+            <Route path="/login" element={<Login />} />
             <Route element={<Layout />}>
                 <Route path="/" element={<Home />} />
 

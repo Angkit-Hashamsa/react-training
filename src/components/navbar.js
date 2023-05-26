@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const navdata = [
     {
@@ -35,6 +35,7 @@ const navdata = [
 ];
 
 const Navbar = () => {
+    const navigate = useNavigate();
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -87,6 +88,17 @@ const Navbar = () => {
                                 </NavLink>
                             </li>
                         ))}
+                        <li>
+                            <button
+                                onClick={() => {
+                                    localStorage.clear();
+                                    navigate("/login");
+                                }}
+                                className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white "
+                            >
+                                Log out
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
