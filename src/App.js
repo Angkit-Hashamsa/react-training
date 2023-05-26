@@ -21,9 +21,8 @@ function App() {
     return (
         <Routes>
             <Route path="/login" element={<Login />} />
-            <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-
+            <Route path="/" element={<Layout />}>
+                <Route index element={<Home />} />
                 <Route path="/about" element={<About />}>
                     <Route index element={<Dashboard />} />
                     <Route path="chart" element={<Chart />} />
