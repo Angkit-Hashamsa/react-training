@@ -1,21 +1,19 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import * as actions from "../../store/actions/action";
 import Todos from "./Todo";
-
-const expensiveCalculation = (num) => {
-    console.log("Calculating...");
-    for (let i = 0; i < 1000000000; i++) {
-        num += 1;
-    }
-    return num;
-};
 
 const Home = () => {
     const [searchParam, setSearchParam] = useSearchParams();
 
-    const [count, setCount] = useState(0);
-    const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+    // const [count, setCount] = useState(0);
+    // const [todos, setTodos] = useState(["todo 1", "todo 2"]);
     const [search, setSearch] = useState("");
+    const { count } = useSelector((state) => state.count);
+    const { todo } = useSelector((state) => state.todo);
+    const dispatch = useDispatch();
+
     // while performing a calculation
     // const calculation = useMemo(() => expensiveCalculation(count), [count]);
     const mySearch = searchParam.get("search");
@@ -24,17 +22,6 @@ const Home = () => {
         setSearchParam({ search });
     };
 
-    // console.log(mySearch);
-
-    const increment = () => {
-        setCount((c) => c + 1);
-    };
-
-    const addToo = useCallback(() => {
-        setTodos([...todos, "newTOdo"]);
-    }, [todos]);
-
-    console.log("Parent is rendeiring");
     return (
         <div className="w-[55%] mx-auto">
             <h2 className="my-5">Home</h2>
@@ -81,16 +68,25 @@ const Home = () => {
                     </button>
                 </div>
             </form>
-            <div>
-                Count: {count}
-                <button
-                    className="px-4 py-4 bg-purple-400 rounded-md text-white"
-                    onClick={increment}
-                >
-                    +
-                </button>
+            <div className="my-4">
+                <p> Count: {count}</p>
+
+                <div className="flex gap-2">
+                    <button
+                        className="px-4 py-2 bg-green-400 rounded-md text-white"
+                        onClick={() => dispatch(actions.increment(23))}
+                    >
+                        Increment
+                    </button>
+                    <button
+                        onClick={() => dispatch(actions.decrement(10))}
+                        className="px-4 py-2 bg-red-500 rounded-md text-white"
+                    >
+                        Decrement
+                    </button>
+                </div>
             </div>
-            <Todos todos={todos} setTodos={addToo} />
+            <Todos todos={todo} />
             <hr />
             {/* {calculation} */}
         </div>

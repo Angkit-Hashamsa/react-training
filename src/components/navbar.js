@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 const navdata = [
     {
         id: 1,
@@ -36,6 +36,8 @@ const navdata = [
 
 const Navbar = () => {
     const navigate = useNavigate();
+    const { count } = useSelector((state) => state.count);
+
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -97,6 +99,11 @@ const Navbar = () => {
                                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white "
                             >
                                 Log out
+                            </button>
+                        </li>
+                        <li>
+                            <button className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white ">
+                                {count}
                             </button>
                         </li>
                     </ul>

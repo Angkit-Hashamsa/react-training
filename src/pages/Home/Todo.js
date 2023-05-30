@@ -1,8 +1,6 @@
 import { memo } from "react";
 
 const Todos = ({ todos, setTodos }) => {
-    console.log("child render");
-
     return (
         <>
             <button onClick={setTodos}>SetTODO</button>
